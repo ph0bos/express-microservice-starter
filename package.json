@@ -1,0 +1,29 @@
+{
+  "name": "express-microservice-starter",
+  "version": "0.1.0",
+  "description": "An express-based Node.js API bootstrapping module for microservices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ph0bos/express-microservice-starter"
+  },
+  "keywords": [
+    "express",
+    "zookeeper",
+    "microservice",
+    "starter",
+    "zoologist"
+  ],
+  "author": "Steven Robinson <steven@ph0bos.io> (https://github.com/ph0bos)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ph0bos/express-microservice-starter/issues"
+  },
+  "homepage": "https://github.com/ph0bos/express-microservice-starter",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
