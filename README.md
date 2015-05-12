@@ -15,6 +15,8 @@ The starter provides the following features out of the box;
 
 ## Basic Usage 
 
+The following is the most basic usage of the starter;
+
 ```
 'use strict';
 
@@ -31,7 +33,7 @@ app.listen(8000);
 
 ## Configuration
 
-By placing an `app.yml` config file in a `/config` directory is is possible to override default options.
+By placing an `app.yml` config file in the `/config` directory of an implementing app it is possible to override default options.
 
 ```
 default:
