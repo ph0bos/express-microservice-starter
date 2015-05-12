@@ -62,3 +62,10 @@ default:
       count: 5
 
 ``` 
+
+## API
+
+```javascript
+app.use(micro({options}));
+```
+
