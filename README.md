@@ -17,7 +17,7 @@ The starter provides the following features out of the box;
 
 The following is the most basic usage of the starter;
 
-```
+```javascript
 'use strict';
 
 var express = require('express');
@@ -35,7 +35,7 @@ app.listen(8000);
 
 By placing an `app.yml` config file in the `/config` directory of an implementing app it is possible to override default options.
 
-```
+```yml
 default:
 
   #
