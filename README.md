@@ -28,3 +28,35 @@ app.use(micro());
 app.listen(8000);
 
 ```
+
+## Configuration
+
+By placing an `app.yml` config file in a `/config` directory is is possible to override default options.
+
+```
+default:
+
+  #
+  # Basic
+  #
+  server:
+    port: 8000
+
+  #
+  # Microservice
+  #
+  microservice:
+    basePath: services
+    server:
+      name: starter/v1
+
+  #
+  # Zookeeper
+  #
+  zookeeper:
+    connectionString: localhost:2181
+    retry:
+      wait: 1000
+      count: 5
+
+``` 
