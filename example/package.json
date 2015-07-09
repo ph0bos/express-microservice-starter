@@ -1,0 +1,6 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "An example implementations of express-microservice-starter.",
+  "main": "index.js"
+}
