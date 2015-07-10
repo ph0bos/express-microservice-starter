@@ -13,10 +13,11 @@ var log       = require('bunyan').createLogger({ name: 'microservice' });
  *
  */
 var buildOptions = function(options) {
-  var config = konfig({ path: options.configPath || './config' });
+  options    = options || {};
+
+  var config = konfig({ path: options.configPath || process.env.PWD + '/config' });
 
   // Default options
-  options                 = options || {};
   options.server          = options.server || { port: process.env.PORT };
   options.debug           = options.debug || false;
   options.discoverable    = options.discoverable || false;
