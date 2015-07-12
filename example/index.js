@@ -9,7 +9,7 @@ var micro   = require('../');
 
 var app  = express();
 
-app.use(micro({ discoverable: true, debug: false }));
+app.use(micro({ discoverable: true, debug: true }));
 
 app.listen(8000, function onListen() {
   log.info('example app initialised');
