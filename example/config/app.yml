@@ -21,4 +21,4 @@ default:
     connectionString: localhost:2181
     retry:
       wait: 1000
-      count: 5
+      count: 3
