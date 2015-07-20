@@ -25,9 +25,11 @@ var micro   = require('express-microservice-starter');
 
 var app = express();
 
-app.use(micro());
+app.use(micro({ discoverable: false, debug: true }));
 
-app.listen(8000);
+app.listen(8000, function onListen() {
+  log.info('Microservice initialised and accepting requests at the following root: http://localhost:8000/starter/v1');
+});
 
 ```
 
