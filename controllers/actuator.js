@@ -4,7 +4,7 @@
  * Dependencies
  */
 var packageInfo = require(process.env.PWD + '/package.json');
-var vitals      = require('../lib/vital-signs');
+var vitals      = require('../lib/vitals');
 
 /**
  * Initialize Actuator endpoints
