@@ -1,6 +1,6 @@
 # Express Microservice Starter
 
-An express-based Node.js API bootstrapping module for building microservices. Whilst the starter behaves just like a normal express middleware it actually provides a fully configured express application.
+An express-based Node.js API bootstrapping module for building microservices. Whilst the starter behaves just like a normal express middleware it actually provides a fully configured express application via sub-app mounting.
 
 ## Key Features
 
@@ -15,7 +15,7 @@ The starter provides the following features out of the box;
 
 ## Basic Usage
 
-The following is the most basic usage of the starter;
+The following is the most basic usage of the starter, for a more detailed example please refer to the `example` directory;
 
 ```javascript
 'use strict';
@@ -62,6 +62,8 @@ default:
       count: 5
 
 ```
+
+In the above example the application would be accessible at the following address: `http://0.0.0.0:8000/starter/v1`, with the `/actuator/info` and `/actuator/health` diagmostic endpoints activated.
 
 ## API
 
