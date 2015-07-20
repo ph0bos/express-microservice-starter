@@ -66,7 +66,7 @@ default:
 ## API
 
 ```javascript
-app.use(micro([ options ]));
+app.use(micro([options]));
 ```
 
 `options` is an optional argument which can overwrite the defaults. It can take the following properties;
