@@ -10,10 +10,10 @@ The starter provides the following features out of the box;
 * Cache-Control header support
 * Body-parsing support
 * Configurable controller/route auto-scanning
-* ZooKeeper autoregistration
+* Automatic service registration with ZooKeeper
 * Actuator info and health endpoints
 
-## Basic Usage 
+## Basic Usage
 
 The following is the most basic usage of the starter;
 
@@ -61,11 +61,16 @@ default:
       wait: 1000
       count: 5
 
-``` 
+```
 
 ## API
 
 ```javascript
-app.use(micro({options}));
+app.use(micro([ options ]));
 ```
 
+`options` is an optional argument which can overwrite the defaults. It can take the following properties;
+
+- `debug`: `boolean` Activate finer grained logging.
+- `discoverable`: `boolean` Register the service with Zookeeper to allow for discovery by other services connecting to the same instance of Zookeeper.
+- `vitals`: `module` Reference to an external VitalSigns compatible monitor, adds custom monitoring (for example MongoDB or Redis connectivity health checks).
