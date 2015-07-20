@@ -7,6 +7,7 @@ var konfig    = require('konfig');
 var express   = require('express');
 var enrouten  = require('express-enrouten');
 var bootstrap = require('./lib/bootstrap');
+var zoologist = require('./lib/zoologist');
 var log       = require('bunyan').createLogger({ name: 'microservice' });
 
 /**
@@ -37,7 +38,7 @@ var buildOptions = function(options) {
   options.serviceName     = config.app.microservice.server.name || pkgInfo.name;
   options.serviceBasePath = config.app.microservice.basePath || 'services';
   options.zookeeper       = config.app.zookeeper || { connectionString: 'localhost:2181', retry: { count: 5 } };
-  
+
   return options;
 };
 
@@ -49,11 +50,17 @@ module.exports = function (options) {
 
   options = buildOptions(options);
 
-  bootstrap(app, options);
+  if (options.discoverable) {
+    zoologist.init(options);
+  }
 
-  if (options.debug) {
-    log.info(options, 'bootstrapped microservice');
-  } 
+  app.once('mount', function onmount(parent) {
+    bootstrap(parent, options);
+
+    if (options.debug) {
+      log.info(options, 'bootstrapped microservice');
+    }
+  });
 
   return app;
 };
