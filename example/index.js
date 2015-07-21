@@ -11,8 +11,7 @@ var app  = express();
 
 app.use(micro({
   discoverable: false,
-  debug: true,
-  vitals: require('./lib/vitals')()
+  debug: true
 }));
 
 app.listen(8000, function onListen() {
