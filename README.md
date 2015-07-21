@@ -77,4 +77,5 @@ app.use(micro([options]));
 
 - `debug`: `boolean` Activate finer grained logging.
 - `discoverable`: `boolean` Register the service with Zookeeper to allow for discovery by other services connecting to the same instance of Zookeeper.
-- `vitals`: `module` Reference to an external VitalSigns compatible monitor, adds custom monitoring (for example MongoDB or Redis connectivity health checks).
+- `controllersPath`: `String` Path to load controllers. Defaults to `controllers`.
+- `monitorsPath`: `String` Path to load monitors. Defaults to `monitors`.
