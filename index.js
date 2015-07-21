@@ -11,7 +11,33 @@ var zoologist = require('./lib/zoologist');
 var log       = require('bunyan').createLogger({ name: 'microservice' });
 
 /**
+ * Create an instance of a microservice and mount upon the parent
+ * Express application.
  *
+ * @public
+ */
+module.exports = function (options) {
+  var app = express();
+
+  options = buildOptions(options);
+
+  if (options.discoverable) {
+    zoologist.initialise(options);
+  }
+
+  app.once('mount', function onmount(parent) {
+    bootstrap(parent, options);
+
+    if (options.debug) {
+      log.info(options, 'bootstrapped microservice');
+    }
+  });
+
+  return app;
+};
+
+/**
+ * Construct an options instance.
  */
 var buildOptions = function(options) {
   options    = options || {};
@@ -40,27 +66,4 @@ var buildOptions = function(options) {
   options.zookeeper       = config.app.zookeeper || { connectionString: 'localhost:2181', retry: { count: 5 } };
 
   return options;
-};
-
-/**
- *
- */
-module.exports = function (options) {
-  var app = express();
-
-  options = buildOptions(options);
-
-  if (options.discoverable) {
-    zoologist.init(options);
-  }
-
-  app.once('mount', function onmount(parent) {
-    bootstrap(parent, options);
-
-    if (options.debug) {
-      log.info(options, 'bootstrapped microservice');
-    }
-  });
-
-  return app;
 };

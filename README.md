@@ -1,6 +1,6 @@
 # Express Microservice Starter
 
-An express-based Node.js API bootstrapping module for building microservices. Whilst the starter behaves just like a normal express middleware it actually provides a fully configured express application.
+An express-based Node.js API bootstrapping module for building microservices. Whilst the starter behaves just like a normal express middleware it actually provides a fully configured express application via sub-app mounting.
 
 ## Key Features
 
@@ -10,12 +10,12 @@ The starter provides the following features out of the box;
 * Cache-Control header support
 * Body-parsing support
 * Configurable controller/route auto-scanning
-* ZooKeeper autoregistration
+* Automatic service registration with ZooKeeper
 * Actuator info and health endpoints
 
-## Basic Usage 
+## Basic Usage
 
-The following is the most basic usage of the starter;
+The following is the most basic usage of the starter, for a more detailed example please refer to the `example` directory;
 
 ```javascript
 'use strict';
@@ -25,9 +25,11 @@ var micro   = require('express-microservice-starter');
 
 var app = express();
 
-app.use(micro());
+app.use(micro({ discoverable: false, debug: true }));
 
-app.listen(8000);
+app.listen(8000, function onListen() {
+  log.info('Microservice initialised and accepting requests at the following root: http://localhost:8000/starter/v1');
+});
 
 ```
 
@@ -61,11 +63,18 @@ default:
       wait: 1000
       count: 5
 
-``` 
+```
+
+In the above example the application would be accessible at the following address: `http://0.0.0.0:8000/starter/v1`, with the `/actuator/info` and `/actuator/health` diagmostic endpoints activated.
 
 ## API
 
 ```javascript
-app.use(micro({options}));
+app.use(micro([options]));
 ```
 
+`options` is an optional argument which can overwrite the defaults. It can take the following properties;
+
+- `debug`: `boolean` Activate finer grained logging.
+- `discoverable`: `boolean` Register the service with Zookeeper to allow for discovery by other services connecting to the same instance of Zookeeper.
+- `vitals`: `module` Reference to an external VitalSigns compatible monitor, adds custom monitoring (for example MongoDB or Redis connectivity health checks).

@@ -9,8 +9,12 @@ var micro   = require('../');
 
 var app  = express();
 
-app.use(micro({ discoverable: true, debug: true, poweredBy: 'Unity' }));
+app.use(micro({
+  discoverable: false,
+  debug: true,
+  vitals: require('./lib/vitals')()
+}));
 
 app.listen(8000, function onListen() {
-  log.info('example app initialised');
+  log.info('example app initialised and serving at the following root: http://localhost:8000/starter/v1');
 });

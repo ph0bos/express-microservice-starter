@@ -4,7 +4,7 @@
  * Dependencies
  */
 var packageInfo = require(process.env.PWD + '/package.json');
-var vitals      = require('../lib/vital-signs')();
+var vitals      = require('../lib/vitals');
 
 /**
  * Initialize Actuator endpoints
@@ -16,7 +16,7 @@ module.exports = function (router) {
   /*
    * Health Endpoint
    */
-  router.get('/health', vitals.express);
+  router.get('/health', vitals.getExpress());
 
   /*
    * Info Endpoint
