@@ -10,7 +10,7 @@ var micro   = require('../');
 var app  = express();
 
 app.use(micro({
-  discoverable: false,
+  discoverable: true,
   debug: true
 }));
 

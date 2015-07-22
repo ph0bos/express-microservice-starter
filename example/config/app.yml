@@ -13,6 +13,7 @@ default:
     basePath: services
     server:
       name: starter/v1
+      dependencies: ingest/events/festivals-lab/v1
 
   #
   # Zookeeper
