@@ -53,6 +53,7 @@ default:
     basePath: services
     server:
       name: starter/v1
+      dependencies: my/other/service/to/monitor/v1
 
   #
   # Zookeeper
