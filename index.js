@@ -42,7 +42,7 @@ module.exports = function (options) {
 var buildOptions = function(options) {
   options    = options || {};
 
-  var config = konfig({ path: options.configPath || process.env.PWD + '/config' });
+  var config = konfig({ path: options.configPath || process.cwd() + '/config' });
 
   // Default options
   options.server          = options.server || { port: process.env.PORT };

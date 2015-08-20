@@ -3,7 +3,7 @@
 /*
  * Dependencies
  */
-var packageInfo = require(process.env.PWD + '/package.json');
+var packageInfo = require(process.cwd() + '/package.json');
 var vitals      = require('../lib/vitals');
 
 /**
