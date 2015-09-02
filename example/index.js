@@ -3,7 +3,6 @@
 /*
  * Dependencies
  */
-var log     = require('bunyan').createLogger({ name: 'test-app' });
 var express = require('express');
 var micro   = require('../');
 
@@ -15,5 +14,5 @@ app.use(micro({
 }));
 
 app.listen(8000, function onListen() {
-  log.info('example app initialised and serving at the following root: http://localhost:8000/starter/v1');
+  console.log('example app initialised and serving at the following root: http://localhost:8000/starter/v1');
 });
