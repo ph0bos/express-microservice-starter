@@ -47,6 +47,12 @@ default:
     port: 8000
 
   #
+  # Log
+  #
+  log:
+    path: my-log-file.log
+
+  #
   # Microservice
   #
   microservice:
