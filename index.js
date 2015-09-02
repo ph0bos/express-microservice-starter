@@ -8,7 +8,7 @@ var express   = require('express');
 var enrouten  = require('express-enrouten');
 var bootstrap = require('./lib/bootstrap');
 var zoologist = require('./lib/zoologist');
-var log       = require('bunyan').createLogger({ name: 'microservice' });
+var log       = require('./lib/logger');
 
 /**
  * Create an instance of a microservice and mount upon the parent

@@ -7,13 +7,19 @@ default:
     port: 8000
 
   #
+  # Log
+  #
+  log:
+    path: starter-service.log
+
+  #
   # Microservice
   #
   microservice:
     basePath: services
     server:
       name: starter/v1
-      dependencies: ingest/events/festivals-lab/v1
+      dependencies: my/other/service/v1
 
   #
   # Zookeeper
