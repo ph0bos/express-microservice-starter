@@ -1,6 +1,6 @@
 # Express Microservice Starter
 
-An express-based Node.js API bootstrapping module for building microservices. Whilst the starter behaves just like a normal express middleware it actually provides a fully configured express application via sub-app mounting.
+An express-based bootstrapping module for building microservices with Node.js. The starter utilises sub-app mounting to provide any implementing express application with a variety of functionality..
 
 ## Key Features
 
@@ -10,8 +10,10 @@ The starter provides the following features out of the box;
 * Cache-Control header support
 * Body-parsing support
 * Configurable controller/route auto-scanning
+* Configurable health monitors
+* Configurable per-application logging
 * Automatic service registration with ZooKeeper
-* Actuator info and health endpoints
+* Actuator info and health endpoints (/actuator/[info or health])
 
 ## Basic Usage
 
