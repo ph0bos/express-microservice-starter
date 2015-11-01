@@ -45,15 +45,16 @@ var buildOptions = function(options) {
   var config = konfig({ path: options.configPath || process.cwd() + '/config' });
 
   // Default options
-  options.server          = options.server || { port: process.env.PORT };
-  options.debug           = options.debug || false;
-  options.discoverable    = options.discoverable || false;
-  options.monitorsPath    = options.monitorsPath || 'monitors';
-  options.controllersPath = options.controllersPath || 'controllers';
-  options.callerPath      = path.dirname(caller(2));
-  options.serviceName     = pkgInfo.name;
-  options.serviceBasePath = 'services';
-  options.zookeeper       = { connectionString: 'localhost:2181', retry: { count: 5 } };
+  options.server               = options.server || { port: process.env.PORT };
+  options.debug                = options.debug || false;
+  options.discoverable         = options.discoverable || false;
+  options.monitorsPath         = options.monitorsPath || 'monitors';
+  options.controllersPath      = options.controllersPath || 'controllers';
+  options.callerPath           = path.dirname(caller(2));
+  options.serviceName          = pkgInfo.name;
+  options.serviceBasePath      = 'services';
+  options.zookeeper            = { connectionString: 'localhost:2181', retry: { count: 5 } };
+  options.partialResponseQuery = options.partialResponseQuery || 'fields';
 
   // Return now if we have no config
   if (!config.app) {
