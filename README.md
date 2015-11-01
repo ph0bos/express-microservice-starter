@@ -14,7 +14,7 @@ The starter provides the following features out of the box;
 * Configurable per-application logging
 * Automatic service registration with ZooKeeper
 * Actuator info and health endpoints (/actuator/[info or health])
-* Partial Response (https://www.npmjs.com/package/express-partial-response)[Utilises express-partial-response]
+* Partial Response (Powered by express-partial-response)[https://www.npmjs.com/package/express-partial-response]
 
 ## Basic Usage
 
