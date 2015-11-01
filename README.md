@@ -14,6 +14,7 @@ The starter provides the following features out of the box;
 * Configurable per-application logging
 * Automatic service registration with ZooKeeper
 * Actuator info and health endpoints (/actuator/[info or health])
+* Partial Response [Powered by express-partial-response](https://www.npmjs.com/package/express-partial-response)
 
 ## Basic Usage
 
@@ -88,3 +89,4 @@ app.use(micro([options]));
 - `discoverable`: `boolean` Register the service with Zookeeper to allow for discovery by other services connecting to the same instance of Zookeeper.
 - `controllersPath`: `String` Path to load controllers. Defaults to `controllers`.
 - `monitorsPath`: `String` Path to load monitors. Defaults to `monitors`.
+- 'partialResponseQuery': `String` The query parameter to use for partial reponse. Defaults to `fields`.
