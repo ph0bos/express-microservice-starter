@@ -75,7 +75,7 @@ default:
 
 ```
 
-In the above example the application would be accessible at the following address: `http://0.0.0.0:8000/starter/v1`, with the `/actuator/info` and `/actuator/health` diagmostic endpoints activated.
+In the above example the application would be accessible at the following address: `http://0.0.0.0:8000/starter/v1`, with the `/actuator/info` and `/actuator/health` diagnostic endpoints activated.
 
 ## API
 
@@ -89,4 +89,4 @@ app.use(micro([options]));
 - `discoverable`: `boolean` Register the service with Zookeeper to allow for discovery by other services connecting to the same instance of Zookeeper.
 - `controllersPath`: `String` Path to load controllers. Defaults to `controllers`.
 - `monitorsPath`: `String` Path to load monitors. Defaults to `monitors`.
-- 'partialResponseQuery': `String` The query parameter to use for partial reponse. Defaults to `fields`.
+- `partialResponseQuery`: `String` The query parameter to use for partial reponse. Defaults to `fields`.

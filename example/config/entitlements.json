@@ -1,0 +1,62 @@
+{
+  "schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "embargo": {
+      "id": "embargo",
+      "type": "boolean"
+    },
+    "competition": {
+      "id": "competition",
+      "type": "array",
+      "items": {
+        "id": "0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "id",
+            "type": "string",
+            "enum": [
+              "123"
+            ]
+          },
+          "name": {
+            "id": "name",
+            "type": "string",
+            "enum": [
+              "Sports"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "channels": {
+      "id": "channels",
+      "type": "array",
+      "items": {
+        "id": "0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "id",
+            "type": "string",
+            "enum": [
+              "12344"
+            ]
+          },
+          "name": {
+            "id": "name",
+            "type": "string",
+            "enum": [
+              "Test"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
