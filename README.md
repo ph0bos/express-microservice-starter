@@ -1,6 +1,6 @@
 # Express Microservice Starter
 
-An express-based bootstrapping module for building microservices with Node.js. The starter utilises sub-app mounting to provide any implementing express application with a variety of functionality..
+An express-based bootstrapping module for building microservices with Node.js. The starter utilises sub-app mounting to provide any implementing express application with a variety of functionality.
 
 ## Key Features
 
