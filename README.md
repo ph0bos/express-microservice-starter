@@ -2,7 +2,7 @@
 
 An express-based bootstrapping module for building microservices with Node.js. The starter utilises sub-app mounting to provide any implementing express application with a variety of functionality.
 
-[![NPM](https://nodei.co/npm/express-microservice-starter.png)](https://npmjs.org/package/express-microservice-starter)
+[![NPM](https://npmjs.org/package/express-microservice-starter?downloadRank=true&downloads=true)](https://npmjs.org/package/express-microservice-starter?downloadRank=true&downloads=true)
 
 ## Key Features
 
