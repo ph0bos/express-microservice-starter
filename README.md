@@ -92,3 +92,4 @@ app.use(micro([options]));
 - `controllersPath`: `String` Path to load controllers. Defaults to `controllers`.
 - `monitorsPath`: `String` Path to load monitors. Defaults to `monitors`.
 - `partialResponseQuery`: `String` The query parameter to use for partial reponse. Defaults to `fields`.
+- `correlationHeaderName`: `String` The name of your correlation header. Defaults to `X-CorrelationID`.
