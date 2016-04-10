@@ -11,6 +11,9 @@ module.exports = function (router) {
    * Sample GET
    */
   router.get('/', function (req, res, next) {
+    // Log to child logger
+    req.log.info('GET /hello requested');
+
     res.json({
       "message": "Hello"
     });

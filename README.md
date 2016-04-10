@@ -17,6 +17,7 @@ The starter provides the following features out of the box;
 * Automatic service registration with ZooKeeper
 * Actuator info and health endpoints (/actuator/[info or health])
 * Partial Response [Powered by express-partial-response](https://www.npmjs.com/package/express-partial-response)
+* Request correlation id support (`res.locals.correlationId` and `req.log` Bunyan child logging also provided)
 
 ## Basic Usage
 
