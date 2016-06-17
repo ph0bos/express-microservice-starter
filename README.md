@@ -94,3 +94,4 @@ app.use(micro([options]));
 - `monitorsPath`: `String` Path to load monitors. Defaults to `monitors`.
 - `partialResponseQuery`: `String` The query parameter to use for partial reponse. Defaults to `fields`.
 - `correlationHeaderName`: `String` The name of your correlation header. Defaults to `X-CorrelationID`.
+- `enableBodyParsing`: `boolean` Enable or disable body parsing, useful to disable when dealign with content other than JSON. Defaults to `true`.
