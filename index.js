@@ -56,6 +56,7 @@ var buildOptions = function(options) {
   options.zookeeper             = { connectionString: 'localhost:2181', retry: { count: 5 } };
   options.partialResponseQuery  = options.partialResponseQuery || 'fields';
   options.correlationHeaderName = options.correlationHeaderName || 'X-CorrelationID';
+  options.enableBodyParsing     = options.enableBodyParsing || true;
 
   // Return now if we have no config
   if (!config.app) {
