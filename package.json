@@ -1,6 +1,6 @@
 {
   "name": "express-microservice-starter",
-  "version": "0.5.23",
+  "version": "0.5.24",
   "description": "An express-based Node.js API bootstrapping module for microservices.",
   "main": "index.js",
   "scripts": {
