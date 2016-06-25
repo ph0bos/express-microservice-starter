@@ -6,7 +6,7 @@ var util = require('util');
  * Hello Controller
  */
 module.exports = function (router) {
-
+  
   /**
    * Sample GET
    */
