@@ -10,7 +10,9 @@ var app  = express();
 
 app.use(micro({
   discoverable: true,
-  debug: true
+  debug: true,
+  controllersPath: './controllers',
+  monitorsPath: './monitors'
 }));
 
 app.listen(8000, function onListen() {
