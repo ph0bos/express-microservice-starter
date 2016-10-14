@@ -14,6 +14,9 @@ module.exports = function (router) {
     // Log to child logger
     req.log.info('GET /hello requested');
 
+    // Add cache control header
+    res.cacheControl({ maxAge: 300 });
+
     res.json({
       "message": "Hello"
     });

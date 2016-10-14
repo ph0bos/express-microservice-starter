@@ -31,7 +31,7 @@
     "caller": "^1.0.0",
     "cors": "^2.7.1",
     "express": "^4.13.1",
-    "express-cache-response-directive": "^0.2.0",
+    "express-cache-response-directive": "^1.0.0",
     "express-enrouten": "^1.2.1",
     "express-partial-response": "^0.3.4",
     "express-validator": "^2.18.0",
