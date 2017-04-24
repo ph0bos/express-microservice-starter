@@ -57,6 +57,7 @@ var buildOptions = function(options) {
   options.partialResponseQuery  = options.partialResponseQuery || 'fields';
   options.correlationHeaderName = options.correlationHeaderName || 'X-CorrelationID';
   options.enableBodyParsing     = options.enableBodyParsing || true;
+  options.validatorOptions      = options.validatorOptions || null;
 
   // Return now if we have no config
   if (!config.app) {
