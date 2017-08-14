@@ -37,6 +37,12 @@ app.listen(8000, function onListen() {
   log.info('Microservice initialised and accepting requests at the following root: http://localhost:8000/starter/v1');
 });
 
+app.on('service:registered', function(data) {
+  log.info('service registered with zookeeper', data);
+  log.info('microservice registration data is also available as an app.locals property', app.locals.microservice);
+});
+
+
 ```
 
 ## Configuration
