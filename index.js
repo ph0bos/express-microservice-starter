@@ -68,6 +68,7 @@ var buildOptions = function(options) {
   options.server              = config.app.server || { port: process.env.PORT };
   options.serviceName         = config.app.microservice.server.name || pkgInfo.name;
   options.serviceBasePath     = config.app.microservice.basePath || 'services';
+  options.networkInterfaces   = (config.app.microservice.server.registrationNetworkInterfacePriority) ? config.app.microservice.server.registrationNetworkInterfacePriority : null;
   options.serviceDependencies = (config.app.microservice.server.dependencies) ? config.app.microservice.server.dependencies.split(',') : null;
   options.zookeeper           = config.app.zookeeper || { connectionString: 'localhost:2181', retry: { count: 5 } };
 

@@ -4,13 +4,13 @@ default:
   # Basic
   #
   server:
-    port: 8000
+    port: 8010
 
   #
   # Log
   #
-  log:
-    path: starter-service.log
+  #log:
+  #  path: starter-service.log
 
   #
   # Microservice
@@ -20,6 +20,9 @@ default:
     server:
       name: starter/v1
       dependencies: my/other/service/v1
+      registrationNetworkInterfacePriority:
+        - en0
+        - lo0
 
   #
   # Zookeeper
