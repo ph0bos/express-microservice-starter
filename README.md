@@ -72,6 +72,9 @@ default:
     server:
       name: starter/v1
       dependencies: my/other/service/to/monitor/v1
+      registrationNetworkInterfacePriority: 
+        - en0
+        - lo0
 
   #
   # Zookeeper
@@ -85,6 +88,8 @@ default:
 ```
 
 In the above example the application would be accessible at the following address: `http://0.0.0.0:8000/starter/v1`, with the `/actuator/info` and `/actuator/health` diagnostic endpoints activated.
+
+Note: the `registrationNetworkInterfacePriority` property allows the selection of the network interface when dynamically registering a service with ZooKeeper.
 
 ## API
 
