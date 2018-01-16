@@ -132,6 +132,21 @@ var options = {
 
 app.use(micro(options));
 
+//  to register application specific exception handlers wait until the
+//  'swagger:routes:registered' event is emitted.
+app.once('swagger:routes:registered', () => {
+
+  app.use(function (err, req, res, next) {
+  
+    if (err) {
+      res.status(418).json({
+        name: 'Teapot',
+        message: 'Always wanted to use this...'
+      });
+    }
+  });
+});
+
 app.listen(8000, function onListen() {
   log.info('Microservice initialised and accepting requests at the following root: http://localhost:8000/starter/v1');
 });

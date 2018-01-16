@@ -30,20 +30,7 @@ describe('express-microservice-starter swagger spec bindings', function () {
         .expect(500, done);
     });
 
-    it('should return a 500 status if the route handler throws an unexpected exception', function (done) {
-
-      request(app)
-        .get('/v1/proof/catastrophicErrorResponse')
-        .set('Accept', 'application/json')
-        .expect(function (res) {
-          expect(res.body).to.deep.equal({
-            name: 'Internal Server Error',
-            message: 'Internal Server Error'
-          });
-        })
-        .expect(500, done);
-    });
-
+    
     it('should return a 400 bad request error if the swagger request validation fails for query parameters', function (done) {
       
       request(app)
@@ -156,6 +143,21 @@ describe('express-microservice-starter swagger spec bindings', function () {
 
   });
 
+  describe('exceptions fall through to application specific handlers', function () {
+
+    it('should return a 418 status if the route handler throws an unexpected exception', function (done) {
+      request(app)
+        .get('/v1/proof/catastrophicErrorResponse')
+        .set('Accept', 'application/json')
+        .expect(function (res) {
+          expect(res.body).to.deep.equal({
+            name: 'Teapot',
+            message: 'Always wanted to use this...'
+          });
+        })
+        .expect(418, done);
+    });
+  });
 
   describe('success', function () {
 

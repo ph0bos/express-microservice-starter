@@ -35,6 +35,20 @@ const app = express();
 
 app.use(micro(options));
 
+app.once('swagger:routes:registered', () => {
+
+  app.use(function (err, req, res, next) {
+  
+    if (err) {
+      res.status(418).json({
+        name: 'Teapot',
+        message: 'Always wanted to use this...'
+      });
+    }
+  });
+});
+
+
 const server = app.listen(PORT);
 
 module.exports = {app, server};
