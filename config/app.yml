@@ -1,0 +1,42 @@
+#
+# Test config
+#
+
+
+default:
+
+  #
+  # Basic
+  #
+  server:
+    port: 8002
+
+  #
+  # Micro-service
+  #
+  microservice:
+    basePath: services
+    server:
+      name: project
+
+  #
+  # Zookeeper
+  #
+  zookeeper:
+    connectionString: localhost:2181
+    retry:
+      wait: 1000
+      count: 3
+
+  #
+  # Datasource
+  #
+  mongodb:
+    connectionString: localhost:27017
+
+####################################
+# Test Environment Properties      #
+####################################
+test:
+  server:
+    port: 0
