@@ -39,7 +39,6 @@
     "express-validator": "4.3.0",
     "ip": "1.1.5",
     "konfig": "0.2.1",
-    "nsp": "^3.1.0",
     "optional": "0.1.4",
     "swagger": "^0.7.5",
     "swagger-tools": "^0.10.3",
@@ -50,6 +49,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.1.0",
+    "nsp": "^3.1.0",
     "supertest": "^3.0.0"
   }
 }
