@@ -1,0 +1,266 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "Express micro service starter test swagger spec"
+  description: Express micro service starter test swagger spec
+basePath: /v1
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+# security:
+#   - bearerAuth: []
+paths:
+  /proof:
+    x-swagger-router-controller: proof
+    get:
+      description: |
+        List available items.
+      operationId: list
+      parameters:
+        - name: status
+          in: query
+          description: Limit results to items with the provided status
+          required: false
+          type: string
+        - name: limit
+          in: query
+          description: Maximum number of results to return
+          required: false
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: item Response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Item'
+        401:
+          description: Unauthorised Response
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Unexpected Error Response
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      description: Create a new item.
+      operationId: post
+      parameters:
+        - name: item
+          in: body
+          description: item to create
+          required: true
+          schema:
+            $ref: '#/definitions/NewItem'
+      responses:
+        201:
+          description: item Response
+          schema:
+            $ref: '#/definitions/Item'
+        401:
+          description: Unauthorised Response
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Unexpected Error Response
+          schema:
+            $ref: '#/definitions/Error'
+        default:
+          description: Unexpected Error Response
+          schema:
+            type: object
+  /proof/{uuid}:
+    x-swagger-router-controller: proof
+    get:
+      description: Return an item based on the provided uuid
+      operationId: get
+      parameters:
+        - name: uuid
+          in: path
+          description: UUID of the item to return
+          required: true
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Item Response
+          schema:
+            $ref: '#/definitions/Item'
+        401:
+          description: Unauthorised Response
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not Found Response
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Unexpected Error Response
+          schema:
+            $ref: '#/definitions/Error'
+    put:
+      description: Update an item based on the provided uuid
+      operationId: put
+      parameters:
+        - name: uuid
+          in: path
+          description: uuid of the item to update
+          required: true
+          type: integer
+          format: int64
+        - name: item
+          in: body
+          description: item to update
+          required: true
+          schema:
+            $ref: '#/definitions/Item'
+      responses:
+        200:
+          description: Successful Response
+          schema:
+            $ref: '#/definitions/Item'
+        401:
+          description: Unauthorised Response
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not Found Response
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Unexpected Error Response
+          schema:
+            $ref: '#/definitions/Error'
+    delete:
+      description: Delete an Item based on provided uuid
+      operationId: remove
+      parameters:
+        - name: uuid
+          in: path
+          description: uuid of item to delete
+          required: true
+          type: string
+          format: uuid
+      responses:
+        204:
+          description: Item Deleted Response
+        401:
+          description: Unauthorised Response
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not Found Response
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Unexpected Error Response
+          schema:
+            $ref: '#/definitions/Error'
+
+  /proof/invalidResponse:
+    x-swagger-router-controller: proof
+    get:
+      description: Return an in invalid item
+      operationId: invalidResponse
+      responses:
+        200:
+          description: Item Response
+          schema:
+            $ref: '#/definitions/Item'
+        401:
+          description: Unauthorised Response
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not Found Response
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Unexpected Error Response
+          schema:
+            $ref: '#/definitions/Error'
+
+  /proof/catastrophicErrorResponse:
+    x-swagger-router-controller: proof
+    get:
+      description: Unexpected exception test
+      operationId: catastrophicErrorResponse
+      responses:
+        200:
+          description: Item Response
+          schema:
+            $ref: '#/definitions/Item'
+        401:
+          description: Unauthorised Response
+          schema:
+            $ref: '#/definitions/Error'
+        404:
+          description: Not Found Response
+          schema:
+            $ref: '#/definitions/Error'
+        500:
+          description: Unexpected Error Response
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  Item:
+    required:
+      - uuid
+      - name
+      - count
+      - status
+      - created
+    properties:
+      uuid:
+        type: string
+      name:
+        type: string
+      count:
+        type: number
+      status:
+        type: string
+        enum:
+          - active
+          - inactive
+      created:
+          type: string
+          format: date-time
+
+  NewItem:
+    type: object
+    required:
+      - name
+      - count
+      - status
+      - created
+      - userId
+    properties:
+      name:
+        type: string
+      count:
+        type: number
+      status:
+        type: string
+        enum:
+          - active
+          - inactive
+      created:
+        type: string
+        format: date-time      
+      userId:
+        type: number
+
+  Error:
+    required:
+      - name
+      - message
+    properties:
+      name:
+        type: string
+      message:
+        type: string
