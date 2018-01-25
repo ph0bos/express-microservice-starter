@@ -138,6 +138,21 @@ describe('express-microservice-starter swagger spec bindings', function () {
 
   describe('exceptions fall through to application specific handlers', function () {
 
+    it('should return a 418 status if an error handler used before swagger initialisation thrrows an exception', function (done) {
+      request(app)
+        .get('/v1/proof')
+        .set('Accept', 'application/json')
+        .set('Unauthorised', 'yes')
+        .expect(function (res) {
+          expect(res.body).to.deep.equal({
+            name: 'Teapot',
+            message: 'Always wanted to use this...'
+          });
+        })
+        .expect(418, done);
+    });
+
+
     it('should return a 418 status if the route handler throws an unexpected exception', function (done) {
       request(app)
         .get('/v1/proof/catastrophicErrorResponse')
