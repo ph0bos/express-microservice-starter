@@ -7,13 +7,6 @@ const config = require('konfig')({ path: 'config' });
 
 describe('express-microservice-starter swagger spec bindings', function () {
 
-  //  Tests don't close http server correctly. 
-  //  This seems hacky, will investigate further.
-  after(function () {
-    server.close();
-    setTimeout(() => process.exit());
-  });
-
   describe('exceptions', function () {
 
     it('should return a 500 status if the expected response does not validate against the swagger definition', function (done) {
@@ -23,7 +16,7 @@ describe('express-microservice-starter swagger spec bindings', function () {
         .set('Accept', 'application/json')
         .expect(function (res) {
           expect(res.body).to.deep.equal({
-            name: 'Internal Server Error',
+            name: 'InternalServerError',
             message: 'Internal Server Error'
           });
         })
