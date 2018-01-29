@@ -33,6 +33,21 @@ const options = {
 
 const app = express();
 
+app.use(function (req, res, next) {
+
+  if (req.headers.unauthorised) {
+    
+    next(new Error());
+
+  }
+  else {
+
+    next();
+
+  }
+
+});
+
 app.use(micro(options));
 
 app.once('swagger:routes:registered', () => {
