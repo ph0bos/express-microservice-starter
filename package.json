@@ -4,7 +4,7 @@
   "description": "An express-based Node.js API bootstrapping module for microservices.",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --timeout 2000 --colors --recursive -R spec --ui bdd 'test/**/*.test.js' --exit",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha 'test/**/*.test.js'",    
     "security": "node ./node_modules/nsp/bin/nsp check --output checkstyle"
   },
   "repository": {
