@@ -58,6 +58,7 @@ var buildOptions = function(options) {
   options.correlationHeaderName = options.correlationHeaderName || 'X-CorrelationID';
   options.enableBodyParsing     = options.enableBodyParsing || true;
   options.validatorOptions      = options.validatorOptions || null;
+  options.etag                  = options.etag || false;
 
   // Return now if we have no config
   if (!config.app) {
