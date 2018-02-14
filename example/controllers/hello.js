@@ -13,6 +13,7 @@ module.exports = function (router) {
   router.get('/', function (req, res, next) {
     // Log to child logger
     req.log.info('GET /hello requested');
+    req.log.debug('DEBUG: GET /hello requested');
 
     // Add cache control header
     res.cacheControl({ maxAge: 300 });
