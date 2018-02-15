@@ -13,7 +13,7 @@ app.use(micro({
   debug: true,
   controllersPath: './controllers',
   monitorsPath: './monitors',
-  requestTracing: true
+  enableRequestTracing: true
 }));
 
 app.on('service:registered', function (data) {
