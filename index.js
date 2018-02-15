@@ -59,6 +59,7 @@ var buildOptions = function(options) {
   options.enableBodyParsing     = options.enableBodyParsing || true;
   options.validatorOptions      = options.validatorOptions || null;
   options.etag                  = options.etag || false;
+  options.requestTracing        = options.requestTracing || false;
 
   // Return now if we have no config
   if (!config.app) {
