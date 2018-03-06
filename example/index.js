@@ -12,7 +12,8 @@ app.use(micro({
   discoverable: true,
   debug: true,
   controllersPath: './controllers',
-  monitorsPath: './monitors'
+  monitorsPath: './monitors',
+  enableRequestTracing: true
 }));
 
 app.on('service:registered', function (data) {

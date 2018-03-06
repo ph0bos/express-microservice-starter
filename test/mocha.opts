@@ -1,0 +1,7 @@
+--ui bdd
+--timeout 2000
+--colors
+--recursive
+--reporter spec
+--exit
+
