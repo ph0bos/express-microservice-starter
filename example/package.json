@@ -2,5 +2,10 @@
   "name": "example",
   "version": "1.0.0",
   "description": "An example implementation of an express-microservice-starter application",
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "consul": "^0.30.0",
+    "swagger-tools": "^0.10.3",
+    "uuid": "^3.2.1"
+  }
 }

@@ -7,7 +7,7 @@ var konfig    = require('konfig');
 var express   = require('express');
 var enrouten  = require('express-enrouten');
 var bootstrap = require('./lib/bootstrap');
-var zoologist = require('./lib/zoologist');
+var zoologist = require('./lib/service-registration/zoologist');
 var log       = require('./lib/logger');
 
 /**
