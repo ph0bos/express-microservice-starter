@@ -91,6 +91,12 @@ In the above example the application would be accessible at the following addres
 
 Note: the `registrationNetworkInterfacePriority` property allows the selection of the network interface when dynamically registering a service with ZooKeeper.
 
+If you would like to override the version which is exposed in the /info endpoint, just set the VERSION node env variable.
+
+```sh
+VERSION=1.0.1 node index.js
+```
+
 ## API
 
 ```javascript

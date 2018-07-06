@@ -15,7 +15,7 @@ module.exports = function (router) {
     res.json({
       "build": {
         "description": packageInfo.description,
-        "version": packageInfo.version,
+        "version": process.env.VERSION || packageInfo.version,
         "name": packageInfo.name
       }
     });
