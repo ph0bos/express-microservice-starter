@@ -91,6 +91,8 @@ In the above example the application would be accessible at the following addres
 
 Note: the `registrationNetworkInterfacePriority` property allows the selection of the network interface when dynamically registering a service with ZooKeeper.
 
+Note: if `registrationNetworkInterfacePriority` dont works for you you can set `ADVERTISED_HOST` enviroment variable.
+
 If you would like to override the version which is exposed in the /info endpoint, just set the VERSION node env variable.
 
 ```sh
