@@ -9,8 +9,8 @@ default:
   #
   # Log
   #
-  #log:
-  #  path: starter-service.log
+  log:
+    level: debug
 
   #
   # Microservice
